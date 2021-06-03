@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy_Frog : MonoBehaviour, Enemy_Land_Base
+public class Enemy_Frog : BaseEnemy
 {
     public Transform leftPoint;
     public Transform rightPoint;
@@ -11,21 +11,17 @@ public class Enemy_Frog : MonoBehaviour, Enemy_Land_Base
     private float leftx;
     private float rightx;
 
-
     public float speed;
     public float jumpForce;
 
-
     private bool faceLeft;
 
-    private Rigidbody2D rb;
-    private Animator anim;
     private Collider2D collider;
 
     private void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
-        anim = GetComponent<Animator>();
+        base.Start();
+
         collider = GetComponent<Collider2D>();
 
         leftx = leftPoint.position.x;

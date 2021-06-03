@@ -2,10 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy_Eagle : MonoBehaviour
+public class Enemy_Eagle : BaseEnemy
 {
-    private Rigidbody2D rb;
-
     public Transform upPoint;
     public Transform downPoint;
 
@@ -18,7 +16,7 @@ public class Enemy_Eagle : MonoBehaviour
 
     private void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
+        base.Start();
 
         upY = upPoint.position.y;
         downY = downPoint.position.y;

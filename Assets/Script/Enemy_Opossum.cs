@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy_Opossum : MonoBehaviour, Enemy_Land_Base
+public class Enemy_Opossum : BaseEnemy
 {
     public Transform leftPoint;
     public Transform rightPoint;
@@ -11,15 +11,11 @@ public class Enemy_Opossum : MonoBehaviour, Enemy_Land_Base
     private float leftx;
     private float rightx;
 
-    public float speed;
-
     private bool faceLeft;
-
-    private Rigidbody2D rb;
 
     private void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
+        base.Start();
 
         leftx = leftPoint.position.x;
         rightx = rightPoint.position.x;

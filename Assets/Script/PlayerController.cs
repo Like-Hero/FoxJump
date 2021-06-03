@@ -106,7 +106,8 @@ public class PlayerController : MonoBehaviour
             {
                 rb.velocity = new Vector2(rb.velocity.x, jumpforce);
                 anim.SetBool("jumping", true);
-                Destroy(other.gameObject);
+                BaseEnemy enemy = other.gameObject.GetComponent<BaseEnemy>();
+                enemy.JumpOn();
             }
             else
             {
