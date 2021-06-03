@@ -14,6 +14,10 @@ public class PlayerController : MonoBehaviour
     public Text cherryValue;
     public LayerMask ground;
 
+    public AudioSource hurtAudio;
+    public AudioSource jumpAudio;
+    public AudioSource cherryAudio;
+
     public float speed;
     public float jumpforce;
     public int cherryAmount;
@@ -72,6 +76,7 @@ public class PlayerController : MonoBehaviour
             rb.velocity = new Vector2(rb.velocity.x, jumpforce);
             anim.SetBool("falling", false);
             anim.SetBool("jumping", true);
+            jumpAudio.Play();
             //anim.SetBool("idle", false);
         }
         if (rb.velocity.y < 0)
@@ -93,6 +98,7 @@ public class PlayerController : MonoBehaviour
         if (other.gameObject.CompareTag("Collection"))
         {
             cherryAmount++;
+            cherryAudio.Play();
             Destroy(other.gameObject);
         }
         
@@ -125,5 +131,6 @@ public class PlayerController : MonoBehaviour
     private void Hurt(GameObject enemy)
     {
         rb.velocity = new Vector2(enemy.transform.position.x < this.transform.position.x ? 10 : -10, jumpforce / 2);
+        hurtAudio.Play();
     }
 }

@@ -9,6 +9,7 @@ public class BaseEnemy : MonoBehaviour
     protected Rigidbody2D rb;
     protected Animator anim;
 
+    public AudioSource deathAudio;
     protected virtual void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -21,6 +22,7 @@ public class BaseEnemy : MonoBehaviour
     }
     public void JumpOn()
     {
+        deathAudio.Play();
         anim.SetTrigger("death");
     }
 }
