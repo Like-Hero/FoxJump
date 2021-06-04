@@ -36,7 +36,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 3.09, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1871234926133271747}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -165,14 +166,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e424304c8de68d44585e653ffcf534a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collider: {fileID: 717605881332860413}
+  downCollider: {fileID: 717605881332860413}
+  topCollider: {fileID: 717605881332860408}
   cherryValue: {fileID: 0}
   ground:
     serializedVersion: 2
     m_Bits: 256
+  obstruct:
+    serializedVersion: 2
+    m_Bits: 768
   hurtAudio: {fileID: 1632088430}
   jumpAudio: {fileID: 1632088429}
-  cherryAudio: {fileID: 0}
+  cherryAudio: {fileID: 4433037781179416311}
+  cellingPoint: {fileID: 1871234926133271747}
   speed: 5
   jumpforce: 0
   cherryAmount: 0
@@ -579,3 +585,33 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &5789282369497081433
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1871234926133271747}
+  m_Layer: 0
+  m_Name: celling
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1871234926133271747
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5789282369497081433}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.195, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 717605881332860409}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
