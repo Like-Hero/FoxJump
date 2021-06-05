@@ -9,6 +9,8 @@ public class BaseEnemy : MonoBehaviour
     protected Rigidbody2D rb;
     protected Animator anim;
 
+    public Transform deadPoint;
+
     public AudioSource deathAudio;
     protected virtual void Start()
     {
@@ -16,12 +18,22 @@ public class BaseEnemy : MonoBehaviour
         anim = GetComponent<Animator>();
         speed = 3;
     }
+    protected void FallDead()
+    {
+        if (transform.position.y < deadPoint.position.y)
+        {
+            Death();
+        }
+    }
     protected void Death()
     {
         Destroy(gameObject);
     }
     public void JumpOn()
     {
+        //为了防止连续爆炸和敌人还可以走动的问题
+        GetComponent<Collider2D>().enabled = false;
+        GetComponent<Rigidbody2D>().simulated = false;
         deathAudio.Play();
         anim.SetTrigger("death");
     }

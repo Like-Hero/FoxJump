@@ -39,6 +39,7 @@ public class Enemy_Frog : BaseEnemy
     private void Update()
     {
         SwitchAnim();
+        FallDead();
     }
 
     public void Move()

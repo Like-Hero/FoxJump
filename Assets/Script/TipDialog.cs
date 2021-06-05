@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class TipDialog : MonoBehaviour
 {
@@ -10,13 +11,7 @@ public class TipDialog : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            string name = gameObject.name;
-            if (name.Equals("FirstTip")) tip = "Welcome!";
-            else if (name.Equals("SecondTip")) tip = "Fighting!";
-            else if (name.Equals("ThirdTip")) tip = "Go!";
-            else if (name == "Enter") tip = "Press E to Enter";
-            tipText.text = tip;
-            tipDialog.SetActive(true);
+            SetDialog();
         }
     }
     private void OnTriggerExit2D(Collider2D other)
@@ -25,5 +20,14 @@ public class TipDialog : MonoBehaviour
         {
             tipDialog.SetActive(false);
         }
+    }
+    private void SetDialog()
+    {
+        string name = gameObject.name;
+        if (name.Equals("FirstTip")) tip = "Welcome!";
+        else if (name.Equals("SecondTip")) tip = "Fighting!";
+        else if (name.Equals("ThirdTip")) tip = "Go!";
+        tipText.text = tip;
+        tipDialog.SetActive(true);
     }
 }

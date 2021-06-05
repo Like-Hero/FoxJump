@@ -35,6 +35,7 @@ public class Enemy_Opossum : BaseEnemy
     private void Update()
     {
         Move();
+        FallDead();
     }
     public void Move()
     {
