@@ -89,13 +89,16 @@
     <Compile Include="Assets\Samples\Cinemachine\2.7.2\Cinemachine Example Scenes\Shared\Scripts\SimpleElevator.cs" />
     <Compile Include="Assets\Samples\Cinemachine\2.7.2\Cinemachine Example Scenes\Shared\Scripts\SpawnInCircle.cs" />
     <Compile Include="Assets\Samples\Cinemachine\2.7.2\Cinemachine Example Scenes\Shared\Scripts\ThirdPersonFollowDistanceModifier.cs" />
+    <Compile Include="Assets\Script\BackgroundParallax.cs" />
     <Compile Include="Assets\Script\BaseEneym.cs" />
+    <Compile Include="Assets\Script\Collection.cs" />
     <Compile Include="Assets\Script\Enemy_Eagle.cs" />
     <Compile Include="Assets\Script\Enemy_Frog.cs" />
     <Compile Include="Assets\Script\Enemy_Land_Base.cs" />
     <Compile Include="Assets\Script\Enemy_Opossum.cs" />
     <Compile Include="Assets\Script\EnterDialog.cs" />
     <Compile Include="Assets\Script\EnterNextScene.cs" />
+    <Compile Include="Assets\Script\Parallax.cs" />
     <Compile Include="Assets\Script\PlayerController.cs" />
     <Compile Include="Assets\Script\PlayerData.cs" />
     <Compile Include="Assets\Script\TipDialog.cs" />

@@ -20,7 +20,6 @@ public class PlayerController : MonoBehaviour
 
     public AudioSource hurtAudio;//受伤音效
     public AudioSource jumpAudio;//跳跃音效
-    public AudioSource CollectionAudio;//拾取物品音效
 
     public Transform cellingPoint;//顶部判断点，判断头上是否有东西，防止蹲下然后站立的时候穿模
     public Transform groundCheck;//底部判断点,判断脚下是否踩着地面
@@ -220,18 +219,12 @@ public class PlayerController : MonoBehaviour
         //捡到物品
         if (other.gameObject.CompareTag("Cherry"))
         {
-            PlayerData.CheeryCount++;
-            CollectionAudio.Play();
-            Destroy(other.gameObject);
-
+            other.GetComponent<Collection>().PickCollection("Cherry");
         }
         else if (other.gameObject.CompareTag("Gem"))
         {
-            PlayerData.GemCount++;
-            CollectionAudio.Play();
-            Destroy(other.gameObject);
+            other.GetComponent<Collection>().PickCollection("Gem");
         }
-        
     }
     private void OnCollisionEnter2D(Collision2D other)
     {
