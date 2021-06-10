@@ -35,7 +35,7 @@ public class PlayerController : MonoBehaviour
 
     public const float CROUCH_RATE = 0.3f;//蹲下之后速度的比例
     public const float MAX_FALL_SPEED = -20.0f;//最大下落速度，防止帧数不够导致穿模
-    public const int MAX_JUMP_COUNT = 2;
+    public const int MAX_JUMP_COUNT = 1;
 
     private void Start()
     {
@@ -47,16 +47,26 @@ public class PlayerController : MonoBehaviour
     //Update用于实时判断
     private void Update()
     {
+        if (GameManager.Ins.isPause)
+        {
+            rb.velocity = Vector2.zero;
+            rb.gravityScale = 0;
+            return;
+        }
+        else
+        {
+            rb.gravityScale = 3.5f;
+        }
         if (Input.GetButtonDown("Jump"))
         {
             jumpPressed = true;
         }
-        UpdateCollectionValue();
     }
 
     //FixedUpdate用于物理变换，例如角色运动以及刚体变换
     private void FixedUpdate()
     {
+        if (GameManager.Ins.isPause) return;
         isGround = Physics2D.OverlapCircle(groundCheck.position, 0.2f, ground);
         //没有死亡并且没有受伤才可以控制主角
         if (!JudgeDead() && !anim.GetBool("hurt"))
@@ -64,12 +74,6 @@ public class PlayerController : MonoBehaviour
             Move();
         }
         SwitchAnim();
-    }
-    
-    private void UpdateCollectionValue()
-    {
-        cherryValue.text = PlayerData.CheeryCount.ToString();
-        gemValue.text = PlayerData.GemCount.ToString();
     }
     private void Move()
     {
@@ -100,6 +104,10 @@ public class PlayerController : MonoBehaviour
         {
             jumpCount = MAX_JUMP_COUNT;//恢复最大跳跃数
             isJump = false;
+        }
+        else
+        {
+            jumpPressed = false;
         }
         if(jumpPressed && jumpCount > 0 && !anim.GetBool("crouching"))
         {
@@ -213,6 +221,11 @@ public class PlayerController : MonoBehaviour
             }
         }
 
+    }
+    private void UpdateCollectionValue()
+    {
+        cherryValue.text = PlayerData.CheeryCount.ToString();
+        gemValue.text = PlayerData.GemCount.ToString();
     }
     private void OnTriggerEnter2D(Collider2D other)
     {

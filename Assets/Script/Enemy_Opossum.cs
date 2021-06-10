@@ -34,6 +34,7 @@ public class Enemy_Opossum : BaseEnemy
     }
     private void Update()
     {
+        if (GameManager.Ins.isPause) return;
         Move();
         FallDead();
     }

@@ -6,7 +6,9 @@ public class Parallax : MonoBehaviour
 {
     public Camera cam;//摄像机
 
-    public float moveRate;//移动比例
+    public float xMoveRate;//移动比例
+    public float yMoveRate;//移动比例
+
 
     private float startPointX;//初始X坐标
     private float startPointY;//初始Y坐标
@@ -21,11 +23,11 @@ public class Parallax : MonoBehaviour
     {
         if (lockY)
         {
-            transform.position = new Vector2(startPointX + cam.transform.position.x * moveRate, transform.position.y);
+            transform.position = new Vector2(startPointX + cam.transform.position.x * xMoveRate, transform.position.y);
         }
         else
         {
-            transform.position = new Vector2(startPointX + cam.transform.position.x * moveRate, startPointY + cam.transform.position.y * moveRate);
+            transform.position = new Vector2(startPointX + cam.transform.position.x * xMoveRate, startPointY + cam.transform.position.y * yMoveRate);
         }
         
     }

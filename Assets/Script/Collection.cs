@@ -30,6 +30,10 @@ public class Collection : MonoBehaviour
         GetComponent<Collider2D>().enabled = false;
         anim.SetTrigger("pick");
     }
+    private void Update()
+    {
+        if (GameManager.Ins.isPause) return;
+    }
     private void Dead()
     {
         Destroy(gameObject);

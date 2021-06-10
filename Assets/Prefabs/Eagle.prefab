@@ -205,6 +205,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5bf4ae2a31b6264d97144c773a53993, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deadPoint: {fileID: 0}
   deathAudio: {fileID: 8514919103978009480}
   upPoint: {fileID: 0}
   downPoint: {fileID: 0}
@@ -239,7 +240,8 @@ AudioSource:
   m_GameObject: {fileID: 9165093871015728929}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 7c6bc94fb586e2046b80c77861dc7647,
+    type: 2}
   m_audioClip: {fileID: 8300000, guid: f3aebff15a2971c49bac005a7bc5bc9b, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1

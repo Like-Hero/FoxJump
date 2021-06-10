@@ -25,9 +25,13 @@ public class Enemy_Eagle : BaseEnemy
         Destroy(downPoint.gameObject);
 
     }
-
     private void Update()
     {
+        if (GameManager.Ins.isPause) return;
+    }
+    private void FixedUpdate()
+    {
+        if (GameManager.Ins.isPause) return;
         Move();
     }
     private void Move()

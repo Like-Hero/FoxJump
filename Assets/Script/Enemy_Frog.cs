@@ -38,10 +38,14 @@ public class Enemy_Frog : BaseEnemy
     
     private void Update()
     {
+        if (GameManager.Ins.isPause) return;
         SwitchAnim();
         FallDead();
     }
-
+    private void FixedUpdate()
+    {
+        if (GameManager.Ins.isPause) return;
+    }
     public void Move()
     {
         if (transform.position.x <= leftx)
