@@ -27,7 +27,11 @@ public class Enemy_Eagle : BaseEnemy
     }
     private void Update()
     {
-        if (GameManager.Ins.isPause) return;
+        if (GameManager.Ins.isPause)
+        {
+            rb.velocity = Vector2.zero;
+            return;
+        }
     }
     private void FixedUpdate()
     {

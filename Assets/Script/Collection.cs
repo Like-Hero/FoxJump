@@ -5,7 +5,6 @@ using UnityEngine;
 public class Collection : MonoBehaviour
 {
     private Animator anim;
-    public AudioSource CollectionAudio;//拾取物品音效
 
     private void Start()
     {
@@ -26,7 +25,6 @@ public class Collection : MonoBehaviour
             print("PickCollection Error");
             return;
         }
-        CollectionAudio.Play();
         GetComponent<Collider2D>().enabled = false;
         anim.SetTrigger("pick");
     }

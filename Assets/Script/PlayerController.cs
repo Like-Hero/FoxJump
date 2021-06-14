@@ -13,13 +13,10 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rb;
     private Animator anim;
 
-    public Text cherryValue;//樱桃Text
-    public Text gemValue;//宝石Text
+    //public Text cherryValue;//樱桃Text
+    //public Text gemValue;//宝石Text
 
     public LayerMask ground;//地面
-
-    public AudioSource hurtAudio;//受伤音效
-    public AudioSource jumpAudio;//跳跃音效
 
     public Transform cellingPoint;//顶部判断点，判断头上是否有东西，防止蹲下然后站立的时候穿模
     public Transform groundCheck;//底部判断点,判断脚下是否踩着地面
@@ -111,6 +108,7 @@ public class PlayerController : MonoBehaviour
         }
         if(jumpPressed && jumpCount > 0 && !anim.GetBool("crouching"))
         {
+            AudioManager.Ins.JumpAudioPlay();
             isJump = true;
             rb.velocity = new Vector2(rb.velocity.x, jumpforce);
             if(rb.velocity.y < 0)
@@ -161,7 +159,6 @@ public class PlayerController : MonoBehaviour
     {
         if (transform.position.y < deadPoint.position.y)
         {
-            GetComponent<AudioSource>().enabled = false;
             Invoke("Dead", 2.0f);
             return true;
         }
@@ -177,7 +174,7 @@ public class PlayerController : MonoBehaviour
     private void Hurt(GameObject enemy)
     {
         rb.velocity = new Vector2(enemy.transform.position.x < this.transform.position.x ? 10 : -10, jumpforce / 2);
-        hurtAudio.Play();
+        AudioManager.Ins.HurtAudioPlay();
     }
     private bool Crouch()
     {
@@ -222,21 +219,18 @@ public class PlayerController : MonoBehaviour
         }
 
     }
-    private void UpdateCollectionValue()
-    {
-        cherryValue.text = PlayerData.CheeryCount.ToString();
-        gemValue.text = PlayerData.GemCount.ToString();
-    }
     private void OnTriggerEnter2D(Collider2D other)
     {
         //捡到物品
         if (other.gameObject.CompareTag("Cherry"))
         {
             other.GetComponent<Collection>().PickCollection("Cherry");
+            AudioManager.Ins.GetCollectionAudioPlay();
         }
         else if (other.gameObject.CompareTag("Gem"))
         {
             other.GetComponent<Collection>().PickCollection("Gem");
+            AudioManager.Ins.GetCollectionAudioPlay();
         }
     }
     private void OnCollisionEnter2D(Collision2D other)

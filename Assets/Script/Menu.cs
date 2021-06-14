@@ -4,17 +4,12 @@ using UnityEngine.Audio;
 
 public class Menu : MonoBehaviour
 {
-    public GameObject MainUI;
     public AudioMixer audioMixer;
     public Animator pauseMenuAnim;
 
     public void Play()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-    }
-    public void ShowUI()
-    {
-        MainUI.SetActive(true);
     }
     public void PauseMenuIsReady()
     {

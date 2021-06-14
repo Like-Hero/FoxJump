@@ -8,11 +8,13 @@ public class GameManager : MonoBehaviour
 
     public Animator PauseMenuAnim;
 
-    private static GameManager _ins;
-
     public bool isPause;
     public bool pauseMenuIsReady;
 
+    public Text cherryValue;//樱桃Text
+    public Text gemValue;//宝石Text
+
+    private static GameManager _ins;
     public static GameManager Ins { get { return _ins; } }
     private void Start()
     {
@@ -20,12 +22,13 @@ public class GameManager : MonoBehaviour
         {
             _ins = this;
         }
-        DontDestroyOnLoad(gameObject);
+        //DontDestroyOnLoad(gameObject);
         ExitKey = KeyCode.Escape;
         pauseMenuIsReady = true;
     }
     private void Update()
     {
+        UpdateCollectionValue();
         if (Input.GetKeyDown(ExitKey) && pauseMenuIsReady)
         {
             if (isPause)
@@ -50,5 +53,9 @@ public class GameManager : MonoBehaviour
         pauseMenuIsReady = false;
         PauseMenuAnim.SetBool("pause", true);
     }
-    
+    private void UpdateCollectionValue()
+    {
+        cherryValue.text = PlayerData.CheeryCount.ToString();
+        gemValue.text = PlayerData.GemCount.ToString();
+    }
 }
