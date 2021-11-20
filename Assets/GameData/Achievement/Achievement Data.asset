@@ -1,0 +1,120 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2259386fc8c3d314d8c41d01f0d6784a, type: 3}
+  m_Name: Achievement Data
+  m_EditorClassIdentifier: 
+  achievements:
+  - achievementId: 1
+    achievementType: 5
+    achievementName: "\u65F6\u95F4\u56DE\u6EAF\u8005"
+    achievementDescription: "\u611F\u8C22\u4F60\u7684\u6E38\u73A9\uFF01\uFF01\uFF01"
+    achievementIcon: {fileID: 21300000, guid: eefd57e8b57cd814ebc86925f3a4a109, type: 3}
+    awardIcon: {fileID: 21300000, guid: 273ba8fade558457eb836eefe69bba7f, type: 3}
+    currentProgress: 0
+    maxProgress: 5
+    unlocked: 0
+    isHide: 1
+    awardType: 0
+    awardAmount: 10
+    isReceiveAward: 0
+    enemyType: 0
+    itemType: 0
+  - achievementId: 2
+    achievementType: 2
+    achievementName: "\u6A31\u6843\u5C0F\u4E38\u5B50"
+    achievementDescription: "\u6361\u62FE\u6A31\u6843\u6570\u8FBE\u52305"
+    achievementIcon: {fileID: 21300000, guid: 056b6a3f6e14d4af2a7d641c4dd44e79, type: 3}
+    awardIcon: {fileID: 21300000, guid: 273ba8fade558457eb836eefe69bba7f, type: 3}
+    currentProgress: 0
+    maxProgress: 5
+    unlocked: 0
+    isHide: 0
+    awardType: 0
+    awardAmount: 3
+    isReceiveAward: 0
+    enemyType: 0
+    itemType: 0
+  - achievementId: 3
+    achievementType: 3
+    achievementName: "\u94BB\u77F3\u738B\u8001\u4E94"
+    achievementDescription: "\u6361\u62FE\u94BB\u77F3\u6570\u8FBE\u52305"
+    achievementIcon: {fileID: 21300000, guid: 63fd366633d434aeb8ee3ee766305016, type: 3}
+    awardIcon: {fileID: 21300000, guid: 63fd366633d434aeb8ee3ee766305016, type: 3}
+    currentProgress: 0
+    maxProgress: 5
+    unlocked: 0
+    isHide: 0
+    awardType: 1
+    awardAmount: 5
+    isReceiveAward: 0
+    enemyType: 0
+    itemType: 0
+  - achievementId: 4
+    achievementType: 6
+    achievementName: "\u6740\u624B"
+    achievementDescription: "\u7D2F\u8BA1\u51FB\u8D25\u654C\u4EBA20\u4E2A"
+    achievementIcon: {fileID: 21300000, guid: 06823b49a1fcd154da0942a436195adb, type: 3}
+    awardIcon: {fileID: 21300000, guid: 273ba8fade558457eb836eefe69bba7f, type: 3}
+    currentProgress: 0
+    maxProgress: 20
+    unlocked: 0
+    isHide: 1
+    awardType: 1
+    awardAmount: 20
+    isReceiveAward: 0
+    enemyType: 0
+    itemType: 0
+  - achievementId: 5
+    achievementType: 6
+    achievementName: "\u9752\u86D9\u6740\u624B"
+    achievementDescription: "\u7D2F\u8BA1\u51FB\u8D25\u9752\u86D95\u4E2A"
+    achievementIcon: {fileID: 21300000, guid: 662ace939438646e7a4067a89ec54b9e, type: 3}
+    awardIcon: {fileID: 21300000, guid: 273ba8fade558457eb836eefe69bba7f, type: 3}
+    currentProgress: 0
+    maxProgress: 5
+    unlocked: 0
+    isHide: 0
+    awardType: 0
+    awardAmount: 5
+    isReceiveAward: 0
+    enemyType: 1
+    itemType: 0
+  - achievementId: 6
+    achievementType: 6
+    achievementName: "\u9F20\u5987\u6740\u624B"
+    achievementDescription: "\u7D2F\u8BA1\u51FB\u8D25\u9F20\u59875\u4E2A"
+    achievementIcon: {fileID: 21300000, guid: 764fc52f7266843e9b3dac17448f873f, type: 3}
+    awardIcon: {fileID: 21300000, guid: 273ba8fade558457eb836eefe69bba7f, type: 3}
+    currentProgress: 0
+    maxProgress: 5
+    unlocked: 0
+    isHide: 0
+    awardType: 0
+    awardAmount: 5
+    isReceiveAward: 0
+    enemyType: 2
+    itemType: 0
+  - achievementId: 7
+    achievementType: 6
+    achievementName: "\u8001\u9E70\u6740\u624B"
+    achievementDescription: "\u7D2F\u8BA1\u51FB\u8D25\u8001\u9E705\u4E2A"
+    achievementIcon: {fileID: 21300000, guid: f240dfd4814d34d55a9b033f3c9d8a60, type: 3}
+    awardIcon: {fileID: 21300000, guid: 63fd366633d434aeb8ee3ee766305016, type: 3}
+    currentProgress: 0
+    maxProgress: 5
+    unlocked: 0
+    isHide: 0
+    awardType: 0
+    awardAmount: 5
+    isReceiveAward: 0
+    enemyType: 0
+    itemType: 1
